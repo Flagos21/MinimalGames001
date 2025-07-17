@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://8i1pxv07wcxf"]
+
+[ext_resource type="Script" uid="uid://b4cvlan7n46xh" path="res://scene/Interface/Vida/barra_vida.gd" id="1_n5c1n"]
+[ext_resource type="Texture2D" uid="uid://dhepdktdetyw2" path="res://assets/Tile/Interface/Vida/VidaLlena_32x32.png" id="2_ogldi"]
+[ext_resource type="Texture2D" uid="uid://dhs40tq860kh6" path="res://assets/Tile/Interface/Vida/VidaVacia_32x32.png" id="3_1ff05"]
+
+[node name="BarraVida" type="CanvasLayer"]
+script = ExtResource("1_n5c1n")
+corazon_lleno = ExtResource("2_ogldi")
+corazon_vacio = ExtResource("3_1ff05")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect5" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2

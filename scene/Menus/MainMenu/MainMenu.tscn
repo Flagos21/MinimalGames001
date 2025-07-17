@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfuitjdokot45"]
+
+[ext_resource type="Script" uid="uid://dnp113udigiuk" path="res://scene/Menus/MainMenu/empezar_juego.gd" id="1_rflkv"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EmpezarJuego" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.5
+offset_top = -37.0
+offset_right = 220.5
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "EMPEZAR JUEGO"
+script = ExtResource("1_rflkv")
+
+[connection signal="pressed" from="EmpezarJuego" to="EmpezarJuego" method="_on_pressed"]
