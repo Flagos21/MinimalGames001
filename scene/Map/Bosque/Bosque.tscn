@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://rsrv6x5fwwnw"]
+[gd_scene load_steps=11 format=3 uid="uid://rsrv6x5fwwnw"]
 
+[ext_resource type="Script" uid="uid://howasd8h5nqw" path="res://scene/Map/Bosque/bosque.gd" id="1_a0o24"]
 [ext_resource type="Texture2D" uid="uid://b655yx2lpuq2w" path="res://assets/Tile/Structure/TilesetDesert.png" id="1_xw1tj"]
 [ext_resource type="Texture2D" uid="uid://x3fwkhr0catb" path="res://assets/Tile/Structure/TilesetDungeon.png" id="2_p8h2w"]
 [ext_resource type="PackedScene" uid="uid://dqjhyj1idjcjj" path="res://scene/Player/player.tscn" id="3_a0o24"]
 [ext_resource type="PackedScene" uid="uid://8i1pxv07wcxf" path="res://scene/Interface/Vida/BarraVida.tscn" id="4_p8h2w"]
+[ext_resource type="PackedScene" uid="uid://d4f51vt2ug04l" path="res://scene/Interface/Menu.tscn" id="6_naydo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y3d84"]
 texture = ExtResource("1_xw1tj")
@@ -511,6 +513,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_uqhav")
 
 [node name="Bosque" type="Node2D"]
+script = ExtResource("1_a0o24")
 
 [node name="Estructuras" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_uhskd")
@@ -525,3 +528,8 @@ format = 2
 position = Vector2(-44, 103)
 
 [node name="BarraVida" parent="." instance=ExtResource("4_p8h2w")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Menu" parent="CanvasLayer" instance=ExtResource("6_naydo")]
+visible = false

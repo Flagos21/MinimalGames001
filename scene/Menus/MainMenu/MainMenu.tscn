@@ -1,29 +1,82 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfuitjdokot45"]
+[gd_scene load_steps=5 format=3 uid="uid://dfuitjdokot45"]
 
-[ext_resource type="Script" uid="uid://dnp113udigiuk" path="res://scene/Menus/MainMenu/empezar_juego.gd" id="1_rflkv"]
+[ext_resource type="Script" uid="uid://dx6vcigjho0ue" path="res://scene/Menus/MainMenu/main_menu.gd" id="1_nlvk3"]
+[ext_resource type="Texture2D" uid="uid://b655yx2lpuq2w" path="res://assets/Tile/Structure/TilesetDesert.png" id="2_dh4mc"]
+[ext_resource type="Texture2D" uid="uid://crjjelhhnc2rr" path="res://assets/Tile/Player/Personaje1/Animacion_Personaje_1_Reposo_32x32.png" id="3_dh4mc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j4t50"]
+font_size = 48
+font_color = Color(0.00254265, 0.00149022, 0.00238472, 1)
+outline_size = 3
 
 [node name="MainMenu" type="Control"]
+process_mode = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -2.0
+offset_right = 14.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nlvk3")
 
-[node name="EmpezarJuego" type="Button" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -220.5
-offset_top = -37.0
-offset_right = 220.5
-offset_bottom = 37.0
+offset_left = -587.0
+offset_top = -320.0
+offset_right = 560.0
+offset_bottom = 328.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "EMPEZAR JUEGO"
-script = ExtResource("1_rflkv")
+texture = ExtResource("2_dh4mc")
 
-[connection signal="pressed" from="EmpezarJuego" to="EmpezarJuego" method="_on_pressed"]
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -249.0
+offset_top = -165.0
+offset_right = 228.0
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CHILOE Y SUS MITOS"
+label_settings = SubResource("LabelSettings_j4t50")
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -209.0
+offset_top = -251.0
+offset_right = 214.0
+offset_bottom = -147.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="New" type="Button" parent="Menu"]
+layout_mode = 2
+text = "New"
+icon = ExtResource("3_dh4mc")
+
+[node name="Load" type="Button" parent="Menu"]
+layout_mode = 2
+text = "Load"
+
+[node name="Exit" type="Button" parent="Menu"]
+layout_mode = 2
+text = "Exit"

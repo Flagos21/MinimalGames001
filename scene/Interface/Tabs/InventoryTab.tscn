@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfmy1s4gc8xcf"]
+
+[ext_resource type="Script" uid="uid://bl4h8u3243exv" path="res://scene/Interface/Tabs/inventory_tab.gd" id="1_u0eb6"]
+[ext_resource type="Texture2D" uid="uid://crjjelhhnc2rr" path="res://assets/Tile/Player/Personaje1/Animacion_Personaje_1_Reposo_32x32.png" id="2_8nxiq"]
+
+[node name="InventoryTab" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u0eb6")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -578.0
+offset_top = -320.0
+offset_right = 576.0
+offset_bottom = 318.0
+texture = ExtResource("2_8nxiq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -381.0
+offset_top = -150.0
+offset_right = 277.0
+offset_bottom = 231.0
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = -378.0
+offset_top = -142.0
+offset_right = 276.0
+offset_bottom = 232.0

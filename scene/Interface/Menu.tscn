@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4f51vt2ug04l"]
+
+[ext_resource type="Script" uid="uid://ddb5ryrnyhms7" path="res://scene/Interface/menu.gd" id="1_2p8gu"]
+[ext_resource type="Texture2D" uid="uid://bavnm76kj8ynm" path="res://assets/ui/icons/iconoinventario.png" id="2_eog1w"]
+
+[node name="Menu" type="Control"]
+process_mode = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2p8gu")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TabBar" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 119.0
+offset_right = 1035.0
+offset_bottom = 151.0
+
+[node name="BtnInventory" type="TextureButton" parent="TabBar"]
+layout_mode = 2
+texture_normal = ExtResource("2_eog1w")
+stretch_mode = 3
+
+[node name="PanelContenido" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 153.0
+offset_right = 1046.0
+offset_bottom = 563.0
