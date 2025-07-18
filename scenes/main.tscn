@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://iicgvgpyyetc"]
+[gd_scene load_steps=7 format=3 uid="uid://iicgvgpyyetc"]
 
 [ext_resource type="PackedScene" uid="uid://cc5dk576axp5t" path="res://scenes/interactables/key.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://p7jqhli5k58f" path="res://scenes/player/player.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://b4rhspbe8qkf2" path="res://scenes/interactables/chest.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://ditegxihp6dtd" path="res://scenes/interactables/door.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dr8fef7x24gil" path="res://scenes/interactables/sign.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dkco0ha6xvg8q" path="res://scenes/ui/sign_message.tscn" id="6_tefeu"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -13,8 +15,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Player" parent="." instance=ExtResource("2_0wfyh")]
+[node name="Player" parent="." node_paths=PackedStringArray("message_box") instance=ExtResource("2_0wfyh")]
 position = Vector2(120, 67)
+message_box = NodePath("../SignMessage")
 
 [node name="Key" parent="." instance=ExtResource("1_o5qli")]
 position = Vector2(84, 53)
@@ -24,3 +27,8 @@ position = Vector2(172, 53)
 
 [node name="Door" parent="." instance=ExtResource("4_jyhfs")]
 position = Vector2(119, 23)
+
+[node name="Sign" parent="." instance=ExtResource("5_tbgi4")]
+position = Vector2(46, 39)
+
+[node name="SignMessage" parent="." instance=ExtResource("6_tefeu")]

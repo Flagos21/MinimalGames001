@@ -3,6 +3,10 @@ extends CharacterBody2D
 @export var speed := 100
 @export var run_multiplier := 1.5
 
+enum State { MOVE, UI }
+var current_state = State.MOVE
+@export var message_box: Control
+
 var direction := Vector2.ZERO
 var is_running := false
 var last_direction := Vector2.DOWN  # Por defecto, mirando abajo
@@ -38,14 +42,25 @@ func unregister_interactable(obj):
 	if interactable_in_range == obj:
 		interactable_in_range = null
 
+func show_message_box(message: String):
+	message_box.get_node("PanelContainer/Label").text = message
+	message_box.visible = true
+	current_state = State.UI
+
 func _physics_process(delta):
-	# Lógica de Interacción
-	if Input.is_action_just_pressed("interact") and interactable_in_range != null:
-		interactable_in_range.interact(self) # Le decimos al objeto que interactúe
-	get_input()
-	move_and_slide()
-	update_animation()
-#	update_held_item_visual()
+	match current_state:
+		State.MOVE:
+			if Input.is_action_just_pressed("interact") and interactable_in_range != null:
+				interactable_in_range.interact(self)
+			get_input()
+			move_and_slide()
+			update_animation()
+			# update_held_item_visual() 
+		State.UI:
+			# Se cierra el mensaje/sign con "interact" (E) O con "ui_cancel" (Escape)
+			if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("ui_cancel"):
+				message_box.visible = false
+				current_state = State.MOVE
 
 func get_input():
 	direction = Vector2.ZERO

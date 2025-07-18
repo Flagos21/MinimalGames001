@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkco0ha6xvg8q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxnoa"]
+
+[node name="Sign_Message" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 126.0
+offset_bottom = 20.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pxnoa")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Este es un texto de prueba"
+autowrap_mode = 3
