@@ -7,10 +7,45 @@ var direction := Vector2.ZERO
 var is_running := false
 var last_direction := Vector2.DOWN  # Por defecto, mirando abajo
 
+#Referencia para el sprite del item sostenido en la mano
+#@onready var held_item_sprite = $Hand/HeldItemSprite
+
+#Funcion que actualiza visualmente el item sostenido en la mano
+#func update_held_item_visual():
+#	# Preguntamos: ¿Está el item "key" en nuestro inventario?
+#	if has_item("key"):
+#		# Si es así, hacemos visible el sprite de la llave.
+#		held_item_sprite.visible = true
+#	else:
+#		# Si no, nos aseguramos de que esté invisible.
+#		held_item_sprite.visible = false
+
+# Guardará el objeto con el que podemos interactuar si esta cerca
+var interactable_in_range = null
+
+#Se agrega inventario basico para almacenar la llave
+var inventory = []
+
+#Funcion para validar si el usuario tiene algun item en concreto
+func has_item(item_name):
+	return item_name in inventory
+	
+func register_interactable(obj):
+	interactable_in_range = obj
+
+func unregister_interactable(obj):
+	# Nos aseguramos de no borrar la referencia si ya hemos entrado en otra área
+	if interactable_in_range == obj:
+		interactable_in_range = null
+
 func _physics_process(delta):
+	# Lógica de Interacción
+	if Input.is_action_just_pressed("interact") and interactable_in_range != null:
+		interactable_in_range.interact(self) # Le decimos al objeto que interactúe
 	get_input()
 	move_and_slide()
 	update_animation()
+#	update_held_item_visual()
 
 func get_input():
 	direction = Vector2.ZERO

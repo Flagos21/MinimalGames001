@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4rhspbe8qkf2"]
+
+[ext_resource type="Script" uid="uid://l8mbfic33h8l" path="res://scripts/interactables/chest.gd" id="1_6vl4s"]
+[ext_resource type="Texture2D" uid="uid://bs5p7h5ri1d7h" path="res://assets/interactables/chest/chest.png" id="1_nvuik"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vl4s"]
+size = Vector2(32, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k73g1"]
+size = Vector2(36, 34)
+
+[node name="Chest" type="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_6vl4s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nvuik")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6vl4s")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_k73g1")
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

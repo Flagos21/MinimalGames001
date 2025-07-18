@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://p7jqhli5k58f"]
+[gd_scene load_steps=54 format=3 uid="uid://p7jqhli5k58f"]
 
 [ext_resource type="Script" uid="uid://c7eidqqipby5y" path="res://scripts/player/player.gd" id="1_dovo2"]
 [ext_resource type="Texture2D" uid="uid://c5ebde2cc61f1" path="res://assets/player/animations/Animacion_Personaje_1_Reposo_32x32.png" id="2_gmlin"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bku4wsl02wcpu" path="res://assets/player/animations/Animacion_personaje_1_frente_correr_32x32.sprite-Sheet.png" id="6_je7p5"]
 [ext_resource type="Texture2D" uid="uid://p28v5wlgf22w" path="res://assets/player/animations/Animacion_personaje_1_frente_caminar_32x32.sprite-Sheet.png" id="7_fm80t"]
 [ext_resource type="Texture2D" uid="uid://mn7s6s2j54x" path="res://assets/player/animations/Animacion_personaje_1_caminar_32x32.sprite-Sheet.png" id="7_qek5x"]
+[ext_resource type="Texture2D" uid="uid://bt6wneb17ycx4" path="res://assets/interactables/key/key.png" id="11_je7p5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qek5x"]
 atlas = ExtResource("2_p47bc")
@@ -342,7 +343,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gtgg"]
 size = Vector2(10, 11)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+z_index = 2
 script = ExtResource("1_dovo2")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
@@ -356,3 +358,13 @@ shape = SubResource("RectangleShape2D_5gtgg")
 
 [node name="Camera" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
+
+[node name="Hand" type="Node2D" parent="."]
+visible = false
+position = Vector2(5, -9)
+
+[node name="HeldItemSprite" type="Sprite2D" parent="Hand"]
+position = Vector2(2, 7.10543e-15)
+rotation = -1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_je7p5")
