@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dr8fef7x24gil"]
 
-[ext_resource type="Script" uid="uid://8oqeabr5iwcj" path="res://scripts/interactables/sign.gd" id="1_twgyp"]
+[ext_resource type="Script" uid="uid://8oqeabr5iwcj" path="res://scripts/interactables/signs/sign_prueba/sign_prueba.gd" id="1_twgyp"]
 [ext_resource type="Texture2D" uid="uid://cp5rys73er8g6" path="res://assets/interactables/sign/sign.png" id="1_vxikp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twgyp"]

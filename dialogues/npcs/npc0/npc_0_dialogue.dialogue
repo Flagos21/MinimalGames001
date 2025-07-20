@@ -1,0 +1,16 @@
+# npc_0_dialogue.dialogue
+
+~ start
+
+NPC: ¡Bienvenido a chiloe, Tati!
+NPC: Es la primera vez que te veo por aquí.
+
+=> END
+
+
+~ loop_dialogue
+
+NPC: ¡Hola de nuevo!
+NPC: ¿Necesitas algo más?
+
+=> END
