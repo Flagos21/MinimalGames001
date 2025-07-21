@@ -118,7 +118,7 @@ script = ExtResource("1_hr4dm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vl80t")
-animation = &"idle_lado"
+animation = &"idle_espalda"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3.5)
