@@ -1,8 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://lv553lgler16"]
+[gd_scene load_steps=15 format=3 uid="uid://lv553lgler16"]
 
 [ext_resource type="Texture2D" uid="uid://c000gu42d5inh" path="res://assets/tiles/harbor/sprites/TileSetPuerto.png" id="1_popuw"]
 [ext_resource type="Texture2D" uid="uid://cwlw72c8r7ymi" path="res://assets/tiles/harbor/sprites/ArenaTileSet1.png" id="2_lwrgp"]
 [ext_resource type="PackedScene" uid="uid://p7jqhli5k58f" path="res://scenes/player/player.tscn" id="3_6wbns"]
+[ext_resource type="PackedScene" uid="uid://b4rhspbe8qkf2" path="res://scenes/interactables/chest.tscn" id="4_ewock"]
+[ext_resource type="PackedScene" uid="uid://ditegxihp6dtd" path="res://scenes/interactables/door.tscn" id="5_3nh76"]
+[ext_resource type="Resource" uid="uid://bdgsj63lo0rfb" path="res://dialogues/npcs/npc0/npc_0_dialogue.dialogue" id="5_6wbns"]
+[ext_resource type="PackedScene" uid="uid://cc5dk576axp5t" path="res://scenes/interactables/key.tscn" id="6_812u8"]
+[ext_resource type="PackedScene" uid="uid://cw4gk4ci73h05" path="res://scenes/interactables/npcs/npc0/npc_0.tscn" id="7_a465i"]
+[ext_resource type="Resource" uid="uid://cdvs42j4skecj" path="res://dialogues/signs/sign_prueba/sign_prueba.dialogue" id="8_812u8"]
+[ext_resource type="PackedScene" uid="uid://btlalnvuh3bly" path="res://scenes/interactables/boat/boat.tscn" id="8_cuekq"]
+[ext_resource type="PackedScene" uid="uid://dr8fef7x24gil" path="res://scenes/interactables/sign.tscn" id="9_m2i0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ieb8b"]
 texture = ExtResource("1_popuw")
@@ -202,3 +210,23 @@ layer_0/tile_data = PackedInt32Array(655363, 327680, 0, 655367, 393216, 0, 72090
 
 [node name="Player" parent="." instance=ExtResource("3_6wbns")]
 position = Vector2(178, 307)
+
+[node name="Chest" parent="." instance=ExtResource("4_ewock")]
+position = Vector2(75, 244)
+
+[node name="Door" parent="." instance=ExtResource("5_3nh76")]
+position = Vector2(115, 229)
+
+[node name="Key" parent="." instance=ExtResource("6_812u8")]
+position = Vector2(150, 245)
+
+[node name="Sign" parent="." instance=ExtResource("9_m2i0m")]
+position = Vector2(184, 246)
+dialogue_resource = ExtResource("8_812u8")
+
+[node name="Boat" parent="." instance=ExtResource("8_cuekq")]
+position = Vector2(267, 245)
+
+[node name="Npc0" parent="." instance=ExtResource("7_a465i")]
+position = Vector2(96, 280)
+dialogue_resource = ExtResource("5_6wbns")
