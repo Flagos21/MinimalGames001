@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dglcv8mawgupb"
-path="res://.godot/imported/Animacion_npc0_reposo.png-e6997142b769f1a028b5635b96df2999.ctex"
+path="res://.godot/imported/Animacion_npc0_reposo_lado.png-1830d786ea1208a4c89cf48f5ab06fe4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/interactables/npcs/npc0/animations/Animacion_npc0_reposo.png"
-dest_files=["res://.godot/imported/Animacion_npc0_reposo.png-e6997142b769f1a028b5635b96df2999.ctex"]
+source_file="res://assets/interactables/npcs/npc0/animations/Animacion_npc0_reposo_lado.png"
+dest_files=["res://.godot/imported/Animacion_npc0_reposo_lado.png-1830d786ea1208a4c89cf48f5ab06fe4.ctex"]
 
 [params]
 
