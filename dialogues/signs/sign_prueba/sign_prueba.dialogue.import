@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cdvs42j4skecj"
+path="res://.godot/imported/sign_prueba.dialogue-90fe49538642ee262c3470fe219df35b.tres"
+
+[deps]
+
+source_file="res://dialogues/signs/sign_prueba/sign_prueba.dialogue"
+dest_files=["res://.godot/imported/sign_prueba.dialogue-90fe49538642ee262c3470fe219df35b.tres"]
+
+[params]
+
+defaults=true

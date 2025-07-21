@@ -350,14 +350,13 @@ script = ExtResource("1_dovo2")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -15)
 sprite_frames = SubResource("SpriteFrames_qek5x")
-animation = &"SideIdle"
+animation = &"FrontWalk"
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5.5)
 shape = SubResource("RectangleShape2D_5gtgg")
 
 [node name="Camera" type="Camera2D" parent="."]
-offset = Vector2(0, -10)
 zoom = Vector2(5, 5)
 
 [node name="Hand" type="Node2D" parent="."]

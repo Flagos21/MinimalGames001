@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=3 uid="uid://btlalnvuh3bly"]
+
+[ext_resource type="Script" uid="uid://4825mc6vxosl" path="res://scripts/interactables/boat/boat.gd" id="1_32vvm"]
+[ext_resource type="Texture2D" uid="uid://d2mcjdtiate87" path="res://assets/interactables/boat/Animacion_barco_frente.png" id="2_767y1"]
+[ext_resource type="Texture2D" uid="uid://dmjrh4ef3a4r5" path="res://assets/interactables/boat/Animacion_barco_espalda.png" id="3_mbklx"]
+[ext_resource type="Texture2D" uid="uid://dajhtj75revj2" path="res://assets/interactables/boat/Animacion_barco_lado.png" id="4_u0v0r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yacot"]
+atlas = ExtResource("2_767y1")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yb56"]
+atlas = ExtResource("3_mbklx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ln72q"]
+atlas = ExtResource("4_u0v0r")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4h6jl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yacot")
+}],
+"loop": true,
+"name": &"idle_espalda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yb56")
+}],
+"loop": true,
+"name": &"idle_frente",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln72q")
+}],
+"loop": true,
+"name": &"idle_lado",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32vvm"]
+size = Vector2(55, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_32vvm"]
+radius = 31.5159
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_767y1"]
+size = Vector2(30, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbklx"]
+size = Vector2(30, 56)
+
+[node name="Boat" type="CharacterBody2D" node_paths=PackedStringArray("initial_collider")]
+script = ExtResource("1_32vvm")
+initial_collider = NodePath("CollisionSide")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals"]
+sprite_frames = SubResource("SpriteFrames_4h6jl")
+animation = &"idle_lado"
+
+[node name="CollisionSide" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_32vvm")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.5, 0)
+shape = SubResource("CircleShape2D_32vvm")
+
+[node name="PlayerMountPoint" type="Marker2D" parent="."]
+
+[node name="CollisionBack" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_767y1")
+disabled = true
+
+[node name="CollisionFront" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_mbklx")
+disabled = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

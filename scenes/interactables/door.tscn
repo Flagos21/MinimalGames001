@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ditegxihp6dtd"]
+
+[ext_resource type="Script" uid="uid://vhtolinryneq" path="res://scripts/interactables/door.gd" id="1_fnoyy"]
+[ext_resource type="Texture2D" uid="uid://dn3sxhtbsvpj1" path="res://assets/interactables/door/door.png" id="1_qq3h0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnoyy"]
+size = Vector2(64, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xetrc"]
+size = Vector2(76, 136)
+
+[node name="Door" type="StaticBody2D"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_fnoyy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_fnoyy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qq3h0")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_xetrc")
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

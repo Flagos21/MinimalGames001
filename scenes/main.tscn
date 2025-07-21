@@ -1,4 +1,14 @@
-[gd_scene format=3 uid="uid://iicgvgpyyetc"]
+[gd_scene load_steps=10 format=3 uid="uid://iicgvgpyyetc"]
+
+[ext_resource type="PackedScene" uid="uid://cc5dk576axp5t" path="res://scenes/interactables/key.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://p7jqhli5k58f" path="res://scenes/player/player.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://b4rhspbe8qkf2" path="res://scenes/interactables/chest.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://ditegxihp6dtd" path="res://scenes/interactables/door.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dr8fef7x24gil" path="res://scenes/interactables/sign.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://cw4gk4ci73h05" path="res://scenes/interactables/npcs/npc0/npc_0.tscn" id="6_o6xl0"]
+[ext_resource type="Resource" uid="uid://cdvs42j4skecj" path="res://dialogues/signs/sign_prueba/sign_prueba.dialogue" id="6_tipki"]
+[ext_resource type="Resource" uid="uid://bdgsj63lo0rfb" path="res://dialogues/npcs/npc0/npc_0_dialogue.dialogue" id="7_tipki"]
+[ext_resource type="PackedScene" uid="uid://btlalnvuh3bly" path="res://scenes/interactables/boat/boat.tscn" id="9_85g3d"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -7,3 +17,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Player" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(120, 67)
+
+[node name="Key" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(104, 35)
+
+[node name="Chest" parent="." instance=ExtResource("3_sugp2")]
+position = Vector2(77, 34)
+
+[node name="Door" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(16, 19)
+
+[node name="Sign" parent="." instance=ExtResource("5_tbgi4")]
+position = Vector2(47, 36)
+dialogue_resource = ExtResource("6_tipki")
+
+[node name="Npc0" parent="." instance=ExtResource("6_o6xl0")]
+position = Vector2(130, 26)
+dialogue_resource = ExtResource("7_tipki")
+
+[node name="Boat" parent="." instance=ExtResource("9_85g3d")]
+position = Vector2(177, 32)
+
+[node name="DebugLandingPoint" type="Node2D" parent="."]
+position = Vector2(14, 120)
